@@ -84,25 +84,29 @@ function PokemonList() {
           </div>
         </div>
         <div className="pokemon-grid">
-          {unownedPokemons.map((pokemon) => (
-            <div 
-              key={pokemon.id} 
-              className={`pokemon-card ${checkedPokemons[pokemon.id] ? 'owned' : ''}`}
-              onClick={() => handleCheck(pokemon.id)}
-            >
-              <div className="pokedex-number">#{String(pokemon.id).padStart(3, '0')}</div>
-              <img src={pokemon.image} alt={pokemon.name} />
-              <p className="pokemon-name">{pokemon.name}</p>
-              <div className="checkbox-container">
-                <input
-                  type="checkbox"
-                  checked={checkedPokemons[pokemon.id] || false}
-                  readOnly
-                />
-                <span className="checkbox-text">Lo tengo</span>
+          {unownedPokemons.length > 0 ? (
+            unownedPokemons.map((pokemon) => (
+              <div 
+                key={pokemon.id} 
+                className={`pokemon-card ${checkedPokemons[pokemon.id] ? 'owned' : ''}`}
+                onClick={() => handleCheck(pokemon.id)}
+              >
+                <div className="pokedex-number">#{String(pokemon.id).padStart(3, '0')}</div>
+                <img src={pokemon.image} alt={pokemon.name} />
+                <p className="pokemon-name">{pokemon.name}</p>
+                <div className="checkbox-container">
+                  <input
+                    type="checkbox"
+                    checked={checkedPokemons[pokemon.id] || false}
+                    readOnly
+                  />
+                  <span className="checkbox-text">Lo tengo</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <div className="no-results">El Pokémon no existe</div>
+          )}
         </div>
       </div>
 
