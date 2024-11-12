@@ -66,6 +66,8 @@
 @media (max-width: 768px) {
   .floating-buttons {
     display: flex;
+    opacity: 1;
+    visibility: visible;
   }
 }
 

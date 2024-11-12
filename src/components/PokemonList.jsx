@@ -131,11 +131,11 @@ function PokemonList() {
         </div>
       </div>
 
-      {ownedPokemons.length > 0 && !searchTerm && (
-        <div className="pokemon-section owned-section">
-          <h2>Pokémon Capturados ({ownedPokemons.length})</h2>
-          <div className="pokemon-grid">
-            {ownedPokemons.map((pokemon) => (
+      <div className="pokemon-section owned-section">
+        <h2>Pokémon Capturados ({ownedPokemons.length})</h2>
+        <div className="pokemon-grid">
+          {ownedPokemons.length > 0 ? (
+            ownedPokemons.map((pokemon) => (
               <div 
                 key={pokemon.id} 
                 className="pokemon-card owned"
@@ -153,10 +153,12 @@ function PokemonList() {
                   <span>Liberar</span>
                 </div>
               </div>
-            ))}
-          </div>
+            ))
+          ) : (
+            <div className="no-results">Aún no tienes ningún Pokémon</div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 }

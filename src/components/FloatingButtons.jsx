@@ -1,22 +1,16 @@
 import { useState, useEffect } from 'react';
 import './FloatingButtons.css';
+
 function FloatingButtons() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [showTopButton, setShowTopButton] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+    const handleScroll = () => {
+      setShowTopButton(window.scrollY > 200);
     };
 
-    window.addEventListener('scroll', toggleVisibility);
-
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility);
-    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToTop = () => {
@@ -34,29 +28,27 @@ function FloatingButtons() {
   };
 
   return (
-    <>
-      {isVisible && (
-        <div className="floating-buttons">
-          <button 
-            className="float-button top-button"
-            onClick={scrollToTop}
-            aria-label="Volver arriba"
-          >
-            ↑
-          </button>
-          <button 
-            className="float-button owned-button"
-            onClick={scrollToOwned}
-            aria-label="Ir a capturados"
-          >
-            <span className="button-content">
-              <span className="star-icon">★</span>
-              <span className="button-text">Capturados</span>
-            </span>
-          </button>
-        </div>
+    <div className="floating-buttons">
+      {showTopButton && (
+        <button 
+          className="float-button top-button"
+          onClick={scrollToTop}
+          aria-label="Volver arriba"
+        >
+          ↑
+        </button>
       )}
-    </>
+      <button 
+        className="float-button owned-button"
+        onClick={scrollToOwned}
+        aria-label="Ir a capturados"
+      >
+        <span className="button-content">
+          <span className="star-icon">★</span>
+          <span className="button-text">Capturados</span>
+        </span>
+      </button>
+    </div>
   );
 }
 

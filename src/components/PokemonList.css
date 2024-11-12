@@ -257,6 +257,7 @@ h2 {
 @media (max-width: 768px) {
   .mobile-author {
     display: block;
+    color: #041538;
   }
 }
 
