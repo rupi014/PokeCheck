@@ -133,7 +133,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -50px;
+  margin: 0;
   padding: 0;
 }
 
@@ -153,5 +153,105 @@ h2 {
 @media (max-width: 768px) {
   .title-section {
     margin-top: -80px;
+  }
+}
+
+/* Vista lista para móvil */
+@media (max-width: 768px) {
+  .pokemon-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .pokemon-card {
+    display: grid;
+    grid-template-columns: 50px 50px 1fr 50px;
+    align-items: center;
+    padding: 8px 16px;
+    text-align: left;
+    gap: 12px;
+  }
+
+  .pokedex-number {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: right;
+  }
+
+  .pokemon-card img {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+  }
+
+  .pokemon-name {
+    margin: 0;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 500;
+  }
+
+  .checkbox-container {
+    justify-self: end;
+  }
+
+  /* Ajuste para la sección de capturados */
+  .owned-section .pokemon-card {
+    background-color: #e8f5e9;
+  }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 360px) {
+  .pokemon-card {
+    grid-template-columns: 40px 40px 1fr 40px;
+    padding: 6px 12px;
+    gap: 8px;
+  }
+
+  .pokemon-card img {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .pokedex-number {
+    font-size: 0.8rem;
+  }
+}
+
+.checkbox-text {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .checkbox-text {
+    display: none;
+  }
+}
+
+.mobile-author {
+  display: none;
+  font-size: 0.85rem;
+  color: #666;
+  margin: 5px 0 10px 0;
+}
+
+.mobile-author a {
+  color: #2196f3;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.mobile-author a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .mobile-author {
+    display: block;
   }
 }

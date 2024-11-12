@@ -77,29 +77,22 @@
   text-decoration: underline;
 }
 
-/* Media queries para dispositivos móviles */
 @media (max-width: 768px) {
   .header {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     height: auto;
     padding: 0;
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
   }
 
   .logo {
     text-align: center;
     padding: 10px 0;
-    margin: 0;
   }
 
   .nav-links {
     order: 2;
     padding: 10px 0;
-    margin: 0;
   }
 
   .nav-links button {

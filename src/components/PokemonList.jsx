@@ -61,24 +61,31 @@ function PokemonList() {
             alt="PokeCheck Logo" 
             className="title-logo"
           />
+          <div className="mobile-author">
+            Hecho por Rubens Ballester · 
+            <a href="https://x.com/rupidev" target="_blank" rel="noopener noreferrer">
+              @rupidev
+            </a>
+          </div>
           <h1>Pokémon Disponibles</h1>
         </div>
         <div className="pokemon-grid">
           {unownedPokemons.map((pokemon) => (
             <div 
               key={pokemon.id} 
-              className="pokemon-card"
+              className={`pokemon-card ${checkedPokemons[pokemon.id] ? 'owned' : ''}`}
               onClick={() => handleCheck(pokemon.id)}
             >
+              <div className="pokedex-number">#{String(pokemon.id).padStart(3, '0')}</div>
               <img src={pokemon.image} alt={pokemon.name} />
-              <p>{pokemon.name}</p>
+              <p className="pokemon-name">{pokemon.name}</p>
               <div className="checkbox-container">
                 <input
                   type="checkbox"
                   checked={checkedPokemons[pokemon.id] || false}
                   readOnly
                 />
-                <span>Lo tengo</span>
+                <span className="checkbox-text">Lo tengo</span>
               </div>
             </div>
           ))}
