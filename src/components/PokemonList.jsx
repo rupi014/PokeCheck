@@ -48,11 +48,20 @@ function PokemonList() {
       pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+  
   const searchResults = searchTerm 
     ? pokemons.filter(pokemon => 
-        pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+        pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()) && 
+        !checkedPokemons[pokemon.id]
       )
     : unownedPokemons;
+
+  const filteredOwnedPokemons = ownedPokemons.filter(pokemon =>
+    pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Verificar si el Pokémon buscado está en capturados
+  const isSearchedPokemonCaptured = searchTerm && filteredOwnedPokemons.length > 0;
 
   if (isLoading) {
     return (
@@ -126,16 +135,20 @@ function PokemonList() {
               </div>
             ))
           ) : (
-            <div className="no-results">El Pokémon no existe</div>
+            <div className="no-results">
+              {isSearchedPokemonCaptured 
+                ? "¡Pokémon ya capturado!" 
+                : "El Pokémon no existe"}
+            </div>
           )}
         </div>
       </div>
 
       <div className="pokemon-section owned-section">
-        <h2>Pokémon Capturados ({ownedPokemons.length})</h2>
+        <h2>Pokémon Capturados ({filteredOwnedPokemons.length})</h2>
         <div className="pokemon-grid">
-          {ownedPokemons.length > 0 ? (
-            ownedPokemons.map((pokemon) => (
+          {filteredOwnedPokemons.length > 0 ? (
+            filteredOwnedPokemons.map((pokemon) => (
               <div 
                 key={pokemon.id} 
                 className="pokemon-card owned"

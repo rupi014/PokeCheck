@@ -16,7 +16,7 @@ function Header() {
     <header className="header">
       <div className="logo">PokeCheck</div>
       <nav className="nav-links">
-        <button onClick={scrollToTop}>INICIO</button>
+        <button onClick={scrollToTop}>DISPONIBLES</button>
         <button onClick={scrollToOwned}>CAPTURADOS</button>
       </nav>
       <div className="author-info">
