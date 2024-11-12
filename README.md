@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# PokeCheck
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**URL:** [PokeCheck](https://pokecheck-rbl.netlify.app/)
 
-## Available Scripts
+## Descripción del Proyecto
 
-In the project directory, you can run:
+**PokeCheck** es una aplicación web que permite a los usuarios obtener una lista de Pokémon y marcarlos como capturados para luego revisarlos en una sección de capturas y poder llevar un registro de los mismos.
 
-### `npm start`
+## Características
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Consulta de Pokémon:** Permite buscar Pokémon específicos y obtener detalles relevantes como sus tipos, habilidades, estadísticas base y evolución.
+- **Interfaz amigable:** El diseño es simple y fácil de navegar, proporcionando una experiencia de usuario intuitiva.
+- **Interactividad:** Responde dinámicamente a las consultas de los usuarios, permitiendo una navegación rápida y sin interrupciones.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tecnologías Utilizadas
 
-### `npm test`
+- **Frontend:** HTML, CSS y JavaScript
+- **Frameworks y Librerías:** Utilización de tecnologías modernas para la gestión de estados y manipulación del DOM.
+- **API Externa:** Integración con una API para la obtención de datos actualizados sobre los Pokémon.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalación y Uso
 
-### `npm run build`
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/usuario/pokecheck-rbl.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Navega al directorio del proyecto:**
+   ```bash
+   cd pokecheck-rbl
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Instala las dependencias:**
+   ```bash
+   npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Inicia el servidor de desarrollo:**
+   ```bash
+   npm start
 
-### `npm run eject`
+5. **Abre tu navegador y navega a:**
+   ```bash
+   http://localhost:3000
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contribuciones
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Este proyecto es de código abierto y cualquier contribución es bienvenida. Si deseas mejorar la aplicación, sigue estos pasos:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Realiza un fork del repositorio.
+2. Crea una rama para tu contribución: `git checkout -b mejora-nombre-de-la-mejora`.
+3. Realiza tus cambios y realiza commit: `git commit -m 'Descripción de la mejora'`.
+4. Realiza push a la rama: `git push origin mejora-nombre-de-la-mejora`.
+5. Abre un Pull Request en GitHub.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Autor
 
-## Learn More
+- **Nombre:** [Rubens Ballester Lillo](https://github.com/rupi014)
+- **Correo:** rubens.bali@gmail.com
+- **LinkedIn:** [Rubens Ballester Lillo](https://www.linkedin.com/in/rubensbl/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Licencia
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
-### Code Splitting
+## Agradecimientos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Agradezco a [PokeAPI](https://pokeapi.co/) por proporcionar la API que alimenta esta aplicación.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+¡Gracias por usar PokeCheck!
