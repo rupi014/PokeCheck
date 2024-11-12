@@ -56,9 +56,21 @@ function PokemonList() {
 
   if (isLoading) {
     return (
-      <div className="loading-container">
-        <div className="loading-spinner"></div>
-        <p>Cargando Pokémon...</p>
+      <div className="pokemon-container">
+        <div className="pokemon-section">
+          <div className="title-section">
+            <div className="logo-placeholder"></div>
+            <h2>Cargando...</h2>
+          </div>
+          <div className="pokemon-grid">
+            {[...Array(12)].map((_, index) => (
+              <div key={index} className="pokemon-card skeleton">
+                <div className="skeleton-image"></div>
+                <div className="skeleton-text"></div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     );
   }
