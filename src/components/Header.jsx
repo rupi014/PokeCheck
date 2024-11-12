@@ -16,8 +16,8 @@ function Header() {
     <header className="header">
       <div className="logo">PokeCheck</div>
       <nav className="nav-links">
-        <button onClick={scrollToTop}>Inicio</button>
-        <button onClick={scrollToOwned}>Capturados</button>
+        <button onClick={scrollToTop}>INICIO</button>
+        <button onClick={scrollToOwned}>CAPTURADOS</button>
       </nav>
       <div className="author-info">
         <span className="author-name">Hecha por Rubens Ballester</span>
