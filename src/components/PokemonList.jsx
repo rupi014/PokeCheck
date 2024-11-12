@@ -43,10 +43,16 @@ function PokemonList() {
 
   const ownedPokemons = pokemons.filter(pokemon => checkedPokemons[pokemon.id]);
   const unownedPokemons = pokemons
-    .filter(pokemon => !checkedPokemons[pokemon.id])
     .filter(pokemon => 
+      !checkedPokemons[pokemon.id] && 
       pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+  const searchResults = searchTerm 
+    ? pokemons.filter(pokemon => 
+        pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : unownedPokemons;
 
   if (isLoading) {
     return (
@@ -84,8 +90,8 @@ function PokemonList() {
           </div>
         </div>
         <div className="pokemon-grid">
-          {unownedPokemons.length > 0 ? (
-            unownedPokemons.map((pokemon) => (
+          {searchResults.length > 0 ? (
+            searchResults.map((pokemon) => (
               <div 
                 key={pokemon.id} 
                 className={`pokemon-card ${checkedPokemons[pokemon.id] ? 'owned' : ''}`}
@@ -110,7 +116,7 @@ function PokemonList() {
         </div>
       </div>
 
-      {ownedPokemons.length > 0 && (
+      {ownedPokemons.length > 0 && !searchTerm && (
         <div className="pokemon-section owned-section">
           <h2>Pokémon Capturados ({ownedPokemons.length})</h2>
           <div className="pokemon-grid">
