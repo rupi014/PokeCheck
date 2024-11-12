@@ -1,0 +1,120 @@
+.header {
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: 200px 1fr 300px;
+  align-items: center;
+  padding: 0;
+  background-color: #DDA44B;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  height: 60px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2196f3;
+  padding-left: 20px;
+  text-shadow: 
+    -1px -1px 0 #041538,  
+     1px -1px 0 #041538,
+    -1px  1px 0 #041538,
+     1px  1px 0 #041538;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-right: -150px;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #041538;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+  text-shadow: 1px 1px 1px rgba(216, 216, 216, 0.5);
+}
+
+.nav-links button:hover {
+  background-color: #041538;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-shadow: none;
+}
+
+.nav-links button:active {
+  transform: translateY(0);
+  background-color: #1565c0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 20px;
+  justify-content: flex-end;
+  font-size: 0.9rem;
+}
+
+.author-info a {
+  color: #2196f3;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.author-info a:hover {
+  color: #1976d2;
+  text-decoration: underline;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .logo {
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  .nav-links {
+    order: 2;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  .nav-links button {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .author-info {
+    display: none; /* Ocultar en móvil para simplificar */
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 400px) {
+  .nav-links {
+    display: none;
+  }
+}

@@ -1,5 +1,19 @@
+/* Reset de márgenes y padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FDD58D;
+}
+
 .App {
-  text-align: center;
+  min-height: 100vh;
+  background-color: #FDD58D;
 }
 
 .App-logo {
@@ -28,11 +42,7 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Ajusta el padding-top del contenedor principal para compensar el header fijo */
+.pokemon-container {
+  padding-top: 20px;
 }
