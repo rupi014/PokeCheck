@@ -83,6 +83,9 @@ function PokemonList() {
             src="/logo.webp" 
             alt="PokeCheck Logo" 
             className="title-logo"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
           />
           <div className="mobile-author">
             Hecho por Rubens Ballester · 

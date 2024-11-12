@@ -141,9 +141,11 @@ h2 {
 }
 
 .title-logo {
-  width: 200px;  /* Ajusta según el tamaño real de tu logo */
+  width: 200px;
   height: 200px;
-  aspect-ratio: 16/9;  /* Ajusta según la relación de aspecto de tu logo */
+  will-change: transform;
+  contain: content;
+  object-fit: contain;
 }
 
 .title-section h1 {
