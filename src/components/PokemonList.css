@@ -138,10 +138,9 @@ h2 {
 }
 
 .title-logo {
-  max-width: 200px;
-  height: auto;
-  margin: 0;
-  padding: 0;
+  width: 200px;  /* Ajusta según el tamaño real de tu logo */
+  height: 200px;
+  aspect-ratio: 16/9;  /* Ajusta según la relación de aspecto de tu logo */
 }
 
 .title-section h1 {

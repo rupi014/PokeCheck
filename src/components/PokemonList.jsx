@@ -68,7 +68,7 @@ function PokemonList() {
       <div className="pokemon-section">
         <div className="title-section">
           <img 
-            src="/logo.png" 
+            src="/logo.webp" 
             alt="PokeCheck Logo" 
             className="title-logo"
           />
