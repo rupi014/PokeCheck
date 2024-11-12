@@ -255,3 +255,22 @@ h2 {
     display: block;
   }
 }
+
+.search-container {
+  margin: 1rem 0;
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #DDA44B;
+}

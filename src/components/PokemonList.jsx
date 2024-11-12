@@ -4,6 +4,7 @@ import './PokemonList.css';
 function PokemonList() {
   const [pokemons, setPokemons] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
   const [checkedPokemons, setCheckedPokemons] = useState(
     JSON.parse(localStorage.getItem('checkedPokemons')) || {}
   );
@@ -41,7 +42,11 @@ function PokemonList() {
   };
 
   const ownedPokemons = pokemons.filter(pokemon => checkedPokemons[pokemon.id]);
-  const unownedPokemons = pokemons.filter(pokemon => !checkedPokemons[pokemon.id]);
+  const unownedPokemons = pokemons
+    .filter(pokemon => !checkedPokemons[pokemon.id])
+    .filter(pokemon => 
+      pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
   if (isLoading) {
     return (
@@ -67,7 +72,16 @@ function PokemonList() {
               @rupidev
             </a>
           </div>
-          <h1>Pokémon Disponibles</h1>
+          <h2>Pokémon Disponibles ({unownedPokemons.length})</h2>
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Buscar Pokémon..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="search-input"
+            />
+          </div>
         </div>
         <div className="pokemon-grid">
           {unownedPokemons.map((pokemon) => (
@@ -102,6 +116,7 @@ function PokemonList() {
                 className="pokemon-card owned"
                 onClick={() => handleCheck(pokemon.id)}
               >
+                <div className="pokedex-number">#{String(pokemon.id).padStart(3, '0')}</div>
                 <img src={pokemon.image} alt={pokemon.name} />
                 <p>{pokemon.name}</p>
                 <div className="checkbox-container">
